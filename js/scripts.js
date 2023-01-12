@@ -27,9 +27,18 @@ function getAndSetMadLibValues() {
       event.preventDefault();
       getAndSetMadLibValues();
       document.querySelector("div#story").removeAttribute("class");
-      event.preventDefault();
     });
   }
+
+  resetBtn.addEventListener("click", function() {
+    story.setAttribute("class", "hidden");
+    document.getElementById("person1Input").value = null;
+    document.getElementById("person2Input").value = null;
+    document.getElementById("animalInput").value = null;
+    document.getElementById("exclamationInput").value = null;
+    document.getElementById("verbInput").value = null;
+    document.getElementById("nounInput").value = null;
+  });
   
   window.onload = function() {
     // inside of the window.onload handler function we only include
