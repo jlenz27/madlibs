@@ -23,11 +23,12 @@ function getAndSetMadLibValues() {
   // it needs to be called in the window.onload event handler
   function setFormSubmissionEventHandler() {
     let form = document.querySelector("form");
-    form.onsubmit = function(event) {
+    form.addEventListener("submit", function(event){
       event.preventDefault();
       getAndSetMadLibValues();
       document.querySelector("div#story").removeAttribute("class");
-    }
+      event.preventDefault();
+    });
   }
   
   window.onload = function() {
